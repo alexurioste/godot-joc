@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://escenes/Cos.tscn" type="PackedScene" id=1]
+[ext_resource path="res://imatges/terra.jpg" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 481, 84 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 144.5, 41 )
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 53, -133 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 406, 550 )
+scale = Vector2( 16.7617, 18.3827 )
+texture = ExtResource( 2 )
+
+[node name="Personatge" parent="." instance=ExtResource( 1 )]
+position = Vector2( 157, -43 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+modulate = Color( 0.133333, 0.0666667, 0.0666667, 1 )
+position = Vector2( -160, 163 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+margin_left = 306.0
+margin_top = 1670.0
+margin_right = 1270.0
+margin_bottom = 1841.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 789, 1756 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+modulate = Color( 0.133333, 0.0666667, 0.0666667, 1 )
+position = Vector2( 549, -65 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 625, 1756 )
+scale = Vector2( 2, 2 )
+shape = SubResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D2"]
+margin_left = 334.0
+margin_top = 1670.0
+margin_right = 918.0
+margin_bottom = 1841.0

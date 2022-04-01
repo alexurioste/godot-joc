@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://escenes/Personatge.gd" type="Script" id=1]
+[ext_resource path="res://imatges/animacio/alienPink_walk2.png" type="Texture" id=2]
+[ext_resource path="res://imatges/animacio/alienPink_walk1.png" type="Texture" id=3]
+[ext_resource path="res://imatges/animacio/alienPink_jump.png" type="Texture" id=4]
+[ext_resource path="res://imatges/animacio/alienPink_front.png" type="Texture" id=5]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 35.7025
+height = 79.1736
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "camina",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "salta",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "quiet",
+"speed": 5.0
+} ]
+
+[node name="Personatge" type="KinematicBody2D"]
+position = Vector2( 132, 429 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 4, 2.00001 )
+scale = Vector2( 0.75625, 0.7 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 3, -12 )
+scale = Vector2( 0.585505, 0.748705 )
+frames = SubResource( 2 )
+animation = "camina"
+playing = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 4, 4 )
+current = true
+zoom = Vector2( 3, 3 )
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
