@@ -20,7 +20,7 @@ func _physics_process(delta):
 		velocitat +=Vector2.LEFT * velocitat_base
 	if Input.is_action_just_pressed("mou adalt") and doble_salt != 0:
 		velocitat = salt
-		doble_salt -= 1
+		doble_salt -= 0.5
 	if is_on_floor():
 		doble_salt = 1
 	velocitat += gravetat * delta 
@@ -37,17 +37,6 @@ func anima(velocitat: Vector2):
 		animacio.play('camina')
 	if velocitat.y < -1:
 		animacio.play('salta')
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
-
-func _on_Area2D_body_entered(body):
-	get_tree().change_scene("res://escenes/escena2.tscn")
-
-
 
 
 

@@ -1,9 +1,4 @@
-[gd_scene load_steps=5 format=2]
-
-[ext_resource path="res://escenes/Cos.tscn" type="PackedScene" id=1]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32, 64 )
+[gd_scene load_steps=3 format=2]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 22.5, 202 )
@@ -12,13 +7,6 @@ extents = Vector2( 22.5, 202 )
 extents = Vector2( 189.25, 45.25 )
 
 [node name="Joc" type="Node2D"]
-
-[node name="Personatge" parent="." instance=ExtResource( 1 )]
-position = Vector2( 9, 319 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Personatge"]
-position = Vector2( 188, 63 )
-shape = SubResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 213, 21 )
@@ -39,5 +27,3 @@ margin_bottom = 597.0
 [node name="CollisionShape2D1" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2( 1060.25, 548.25 )
 shape = SubResource( 3 )
-
-[connection signal="body_entered" from="Area2D" to="Personatge" method="_on_Area2D_body_entered"]

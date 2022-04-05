@@ -17,14 +17,14 @@ animations = [ {
 "name": "camina",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "salta",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "quiet",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "salta",
 "speed": 5.0
 } ]
 
@@ -47,6 +47,6 @@ playing = true
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 4, 4 )
 current = true
-zoom = Vector2( 3, 3 )
+zoom = Vector2( 2, 2.5 )
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true

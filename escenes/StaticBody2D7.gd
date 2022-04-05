@@ -1,6 +1,6 @@
-extends Node2D
+extends StaticBody2D
 
-
+export var velocitat = Vector2(130,0)
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -8,14 +8,14 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
-
-
+	rotation_degrees = 0
+	position = Vector2(868,-47)
+	
+func _process(delta):
+	position += velocitat * delta
+	if position.x >= 1500 or position.x<868:
+		velocitat[0] = -velocitat[0]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-
-func _on_Area2D_body_entered(body):
-	get_tree().change_scene("res://escenes/escena1.tscn")
