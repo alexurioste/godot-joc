@@ -42,6 +42,7 @@ position = Vector2( 3, -12 )
 scale = Vector2( 0.585505, 0.748705 )
 frames = SubResource( 2 )
 animation = "camina"
+frame = 1
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
